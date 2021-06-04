@@ -49,9 +49,10 @@ func (ap *audioPanel) draw(screen tcell.Screen) {
 
 	screen.Fill(' ', mainStyle)
 
-	drawTextLine(screen, 0, 0, "Welcome to the Music-CLI!", mainStyle)
-	drawTextLine(screen, 0, 1, "Press [ESC] to quit.", mainStyle)
-	drawTextLine(screen, 0, 2, "Press [SPACE] to pause/resume.", mainStyle)
+	drawTextLine(screen, 0, 0, "हरि ॐ । श्रीसरस्वत्यै नमः ।।", mainStyle)
+	drawTextLine(screen, 0, 1, "Music-CLI!", mainStyle)
+	drawTextLine(screen, 0, 2, "[ESC] to quit.", mainStyle)
+	drawTextLine(screen, 0, 3, "[SPACE] to pause/resume.", mainStyle)
 
 	speaker.Lock()
 	position := ap.sampleRate.D(ap.streamer.Position())
@@ -64,14 +65,14 @@ func (ap *audioPanel) draw(screen tcell.Screen) {
 	volumeStatus := fmt.Sprintf("%.1f", volume)
 	speedStatus := fmt.Sprintf("%.3fx", speed)
 
-	drawTextLine(screen, 0, 5, "Position (Q/W):", mainStyle)
-	drawTextLine(screen, 16, 5, positionStatus, statusStyle)
+	drawTextLine(screen, 0, 6, "Position (Q/W) :", mainStyle)
+	drawTextLine(screen, 16, 6, positionStatus, statusStyle)
 
-	drawTextLine(screen, 0, 6, "Volume   (A/S):", mainStyle)
-	drawTextLine(screen, 16, 6, volumeStatus, statusStyle)
+	drawTextLine(screen, 0, 7, "ध्वनिस्तर  (A/S) :", mainStyle)
+	drawTextLine(screen, 20, 7, volumeStatus, statusStyle)
 
-	drawTextLine(screen, 0, 7, "Speed    (Z/X):", mainStyle)
-	drawTextLine(screen, 16, 7, speedStatus, statusStyle)
+	drawTextLine(screen, 0, 8, "वेग (Z/X) :", mainStyle)
+	drawTextLine(screen, 16, 8, speedStatus, statusStyle)
 }
 
 func (ap *audioPanel) handle(event tcell.Event) (changed, quit bool) {
