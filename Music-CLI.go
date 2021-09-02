@@ -68,10 +68,10 @@ func (ap *audioPanel) draw(screen tcell.Screen) {
 	drawTextLine(screen, 0, 6, "Position (Q/W) :", mainStyle)
 	drawTextLine(screen, 16, 6, positionStatus, statusStyle)
 
-	drawTextLine(screen, 0, 7, "ध्वनिस्तर  (A/S) :", mainStyle)
-	drawTextLine(screen, 20, 7, volumeStatus, statusStyle)
+	drawTextLine(screen, 0, 7, "Volume  (A/S) :", mainStyle)
+	drawTextLine(screen, 16, 7, volumeStatus, statusStyle)
 
-	drawTextLine(screen, 0, 8, "वेग (Z/X) :", mainStyle)
+	drawTextLine(screen, 0, 8, "Speed (Z/X) :", mainStyle)
 	drawTextLine(screen, 16, 8, speedStatus, statusStyle)
 }
 
